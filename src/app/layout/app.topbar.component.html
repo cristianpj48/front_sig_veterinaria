@@ -13,6 +13,7 @@
     </button>
 
     <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+        <p class="p-link m-3">Bienvenido {{username}}</p>
         <button class="p-link layout-topbar-button">
             <i class="pi pi-calendar"></i>
             <span>Calendar</span>
@@ -24,6 +25,10 @@
         <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
             <i class="pi pi-cog"></i>
             <span>Settings</span>
+        </button>
+        <button class="p-link layout-topbar-button" (click)="authService.logout()">
+            <i class="pi pi-fw pi-power-off"></i>
+            <span>Salir</span>
         </button>
     </div>
 </div>
